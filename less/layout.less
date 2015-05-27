@@ -1,0 +1,45 @@
+// LAYOUT
+// ------
+
+// Configuration
+@zindex-sidebar-fixed: 1030;
+
+@layout-sidebar-columns: 3;
+@layout-content-columns: @grid-columns - @layout-sidebar-columns;
+
+@layout-sidebar-width: @layout-sidebar-columns * @container-md / @grid-columns;
+@layout-content-width: @layout-content-columns * @container-md / @grid-columns;
+
+// Styles
+.container-page {
+  margin-top: @navbar-height;
+  padding-top: @padding-base-vertical;
+  padding-bottom: @padding-base-vertical;
+}
+
+.layout-sidebar, .layout-content {
+  position: relative;
+  min-height: 1px;
+  padding-left: @grid-gutter-width / 2;
+  padding-right: @grid-gutter-width / 2;
+}
+
+@media (min-width: @screen-md-min) {
+  .layout-sidebar {
+    width: @layout-sidebar-width;
+  }
+
+  .layout-content {
+    width: @layout-content-width;
+  }
+
+  .layout-sidebar-fixed {
+    position: fixed;
+    z-index: @zindex-sidebar-fixed;
+    top: @navbar-height + @padding-base-vertical;
+  }
+
+  .layout-content-fixed {
+    margin-left: @layout-sidebar-width;
+  }
+}
