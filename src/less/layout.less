@@ -11,10 +11,12 @@
 @layout-content-width: @layout-content-columns * @container-md / @grid-columns;
 
 // Styles
+body {
+  padding-top: @navbar-height;
+}
+
 .container-page {
-  margin-top: @navbar-height;
-  padding-top: @padding-base-vertical;
-  padding-bottom: @padding-base-vertical;
+  padding-top: @grid-gutter-width;
 }
 
 .layout-sidebar, .layout-content {
@@ -36,7 +38,7 @@
   .layout-sidebar-fixed {
     position: fixed;
     z-index: @zindex-sidebar-fixed;
-    top: @navbar-height + @padding-base-vertical;
+    top: @navbar-height + @grid-gutter-width;
   }
 
   .layout-content-fixed {
